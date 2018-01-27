@@ -1,5 +1,7 @@
 package space.gui;
 
-public interface CanDrawWorld {
+import space.field.World;
 
+public interface CanDrawWorld {
+	public void drawWorld(World world);
 }
