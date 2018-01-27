@@ -16,4 +16,6 @@ public interface World extends Updateable {
 	
 	public abstract Collection<Bullet> getBullets();
 	public abstract Collection<Enemy> getEnemies();
+	
+	
 }

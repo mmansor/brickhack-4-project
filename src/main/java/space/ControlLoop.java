@@ -21,8 +21,9 @@ public class ControlLoop implements Runnable {
 		
 		long lastUpdateTime = System.currentTimeMillis();
 		while(!Thread.interrupted()) {
-			world.update();
-			renderer.drawWorld(world);
+			//world.update();
+			//renderer.drawWorld(world);
+			System.out.println(count++);
 			
 			long sleepTime = System.currentTimeMillis() + UPDATE_PERIOD - lastUpdateTime;
 			if(sleepTime > 0) {
