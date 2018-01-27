@@ -12,6 +12,7 @@ buildscript {
 
 apply plugin: 'org.xtext.xtend'
 
+apply plugin: 'idea'
 apply plugin: 'eclipse'
 eclipseJdt << { file('.settings/org.eclipse.core.resources.prefs').write('eclipse.preferences.version=1\nencoding/<project>=utf-8') }
 
