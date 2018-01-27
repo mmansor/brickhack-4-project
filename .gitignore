@@ -4,6 +4,7 @@ bin/
 .settings
 .classpath
 .project
+.idea
 brickhack-4-project.iml
 brickhack-4-project.ipr
 brickhack-4-project.iws
