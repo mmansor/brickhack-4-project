@@ -1,4 +1,5 @@
 package space.field;
+import javax.swing.*;
 
 import java.util.Collection;
 
