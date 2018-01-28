@@ -2,6 +2,7 @@ package space.entities;
 
 import space.field.World;
 import space.gui.Sprite;
+import space.gui.sprites.SpriteRegistry;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -28,19 +29,8 @@ public class StraightLineEnemy extends Enemy{
     }
 
 
-    private Sprite sprite = new Sprite() {
-        BufferedImage image = new BufferedImage(50, 25, BufferedImage.TYPE_INT_ARGB);
-        public BufferedImage getImage() {
-            return image;
-        }
-    };
-
     public Sprite getSprite() {
-        Graphics graphics = sprite.getImage().getGraphics();
-        graphics.setColor(Color.WHITE);
-        graphics.fillRect(0,0,50,25);
-
-        return sprite;
+        return SpriteRegistry.getSpriteRegistry().getSprite("Enemy_1");
     }
 
     public void update() {
