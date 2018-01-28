@@ -15,7 +15,7 @@ public class CircleEnemy extends Enemy {
 
 
     public Sprite getSprite() {
-        return SpriteRegistry.getSpriteRegistry().getSprite("Paratroopa");
+        return SpriteRegistry.getSpriteRegistry().getSprite("Octocat");
     }
 
 
@@ -31,7 +31,7 @@ public class CircleEnemy extends Enemy {
 
     }
     public double getHeight(){
-        return 57;
+        return 50;
     }
     public double getWidth(){
         return 50;

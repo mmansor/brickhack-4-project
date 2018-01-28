@@ -22,12 +22,12 @@ public class StandardPlayerBullet extends Bullet{
     }
 
     public double getHeight() {
-        return 18;
+        return 8;
     }
 
 
     public Sprite getSprite() {
-        return SpriteRegistry.getSpriteRegistry().getSprite("Fireball");
+        return SpriteRegistry.getSpriteRegistry().getSprite("Bullet");
     }
 
     public void update() {

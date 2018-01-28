@@ -21,12 +21,12 @@ public class StraightLineEnemy extends Enemy{
     }
 
     public double getHeight() {
-        return 51;
+        return 50;
     }
 
 
     public Sprite getSprite() {
-        return SpriteRegistry.getSpriteRegistry().getSprite("Goomba");
+        return SpriteRegistry.getSpriteRegistry().getSprite("Brick");
     }
 
     public void update() {

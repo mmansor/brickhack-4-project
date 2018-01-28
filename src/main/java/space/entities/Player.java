@@ -26,7 +26,7 @@ public class Player extends Entity{
 		xPosition = 100;
 		yPosition = world.getHeight()/2;
 		width = 50;
-		height = 42;
+		height = 45;
 		hitbox = new RectangleHitbox(xPosition, yPosition, width, height);
 		typing = keys;
 	}
@@ -53,7 +53,7 @@ public class Player extends Entity{
 
 
 	public Sprite getSprite() {
-        return SpriteRegistry.getSpriteRegistry().getSprite("Mario");
+        return SpriteRegistry.getSpriteRegistry().getSprite("Spaceship");
 	}
 
 	public void update() {
