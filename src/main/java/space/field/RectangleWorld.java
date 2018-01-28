@@ -14,11 +14,14 @@ public class RectangleWorld implements World {
 	private List<Bullet> bullets = new ArrayList();
 	private List<Enemy> enemies = new ArrayList();
 	
+	public RectangleWorld() {
+	}
+	
 	
 	@Override
 	public void update() {
 		if(player != null) {
-			//Update the player
+			player.update();
 		}
 		
 		for(Enemy e: enemies) {
@@ -62,6 +65,18 @@ public class RectangleWorld implements World {
 
 	public void addEnemies(Enemy e) {
 		enemies.add(e);
+	}
+	
+
+	public void setPlayer(Player player) {
+		this.player = player;
+	}
+
+
+	@Override
+	public void addEnemy(Enemy enemy) {
+		enemies.add(enemy);
+		
 	}
 
 }
