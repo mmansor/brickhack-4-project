@@ -67,16 +67,16 @@ public class Player extends Entity{
 
 	public void update() {
 		if(typing.shouldMoveLeft() == true) {
-			xPosition -= 1;
+			xPosition -= 10;
 		}
 		if(typing.shouldMoveRight() == true) {
-			xPosition += 1;
+			xPosition += 10;
 		}
 		if(typing.shouldMoveDown() == true) {
-			yPosition += 1;
+			yPosition += 10;
 		}
 		if(typing.shouldMoveUp() == true) {
-			yPosition -= 1;
+			yPosition -= 10;
 		}
 		if(typing.shouldShoot() == true) {
 			world.addBullets(new StandardPlayerBullet(world, xPosition + width + 1, yPosition - height/2));
