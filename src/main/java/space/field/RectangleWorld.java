@@ -14,11 +14,14 @@ public class RectangleWorld implements World {
 	private List<Bullet> bullets = new ArrayList();
 	private List<Enemy> enemies = new ArrayList();
 	
+	public RectangleWorld() {
+	}
+	
 	
 	@Override
 	public void update() {
 		if(player != null) {
-			//Update the player
+			player.update();
 		}
 		
 		for(Enemy e: enemies) {
@@ -60,6 +63,11 @@ public class RectangleWorld implements World {
 	public void addEnemy(Enemy enemy) {
 		// TODO Auto-generated method stub
 		enemies.add(enemy);
+	}
+	
+
+	public void setPlayer(Player player) {
+		this.player = player;
 	}
 
 }

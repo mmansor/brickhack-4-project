@@ -6,7 +6,7 @@ import space.gui.Sprite;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public abstract class Player extends Entity implements KeyStatus{
+public class Player extends Entity{
 
 	private double xPosition;
 	private double yPosition;
@@ -17,7 +17,7 @@ public abstract class Player extends Entity implements KeyStatus{
 
 	public Player(World world, KeyStatus keys) {
 		super(world);
-		xPosition = 0;
+		xPosition = 100;
 		yPosition = world.getHeight()/2;
 		width = 50;
 		height = 25;
@@ -62,16 +62,18 @@ public abstract class Player extends Entity implements KeyStatus{
 
 	public void update() {
 		if(typing.isAKeyDown() == true) {
-			xPosition -= 1;
+			xPosition -= 10;
 		}
 		if(typing.isDKeyDown() == true) {
-			xPosition += 1;
+			
+			System.out.println("Moving Right");
+			xPosition += 10;
 		}
 		if(typing.isSKeyDown() == true) {
-			yPosition -= 1;
+			yPosition += 10;
 		}
 		if(typing.isWKeyDown() == true) {
-			yPosition += 1;
+			yPosition -= 10;
 		}
 	}
 }

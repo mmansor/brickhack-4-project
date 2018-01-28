@@ -3,8 +3,6 @@ package space.gui;
 import java.awt.Dimension;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.io.Closeable;
-import java.io.IOException;
 
 import javax.swing.JFrame;
 
@@ -17,7 +15,7 @@ public class Window implements CanDrawWorld {
     private final JFrame frame;
 	private final GUIPanel panel;
 
-	public Window() {
+	public Window(KeyStatusListener ksl) {
 		panel = new GUIPanel();
 		frame = new JFrame();
 		
@@ -32,7 +30,7 @@ public class Window implements CanDrawWorld {
 
 		GUI.drawWorld(world);
 
-
+		frame.addKeyListener(ksl);
 		frame.addWindowListener(new WindowListener() {
 
 			@Override
