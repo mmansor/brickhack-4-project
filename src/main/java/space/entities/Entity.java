@@ -16,7 +16,7 @@ public abstract class Entity implements Updateable {
 	public Entity(World world) {
 
 		this.world = world;
-		hitbox = new RectangleHitbox(0,0,getWidth(),getHeight());
+		hitbox = new RectangleHitbox(0,0, getWidth(),getHeight());
 	}
 	
 	public  double getXPosition() {

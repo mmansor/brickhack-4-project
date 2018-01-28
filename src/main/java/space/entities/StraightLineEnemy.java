@@ -27,6 +27,7 @@ public class StraightLineEnemy extends Enemy{
         return height;
     }
 
+
     private Sprite sprite = new Sprite() {
         BufferedImage image = new BufferedImage(50, 25, BufferedImage.TYPE_INT_ARGB);
         public BufferedImage getImage() {
@@ -43,7 +44,10 @@ public class StraightLineEnemy extends Enemy{
     }
 
     public void update() {
-
         move(-1,0);
+
+        if (getXPosition() < 0){
+            world.removeEnemies(this);
+        }
     }
 }

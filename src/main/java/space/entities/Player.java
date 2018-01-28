@@ -18,6 +18,8 @@ public class Player extends Entity{
 	private Collection<Bullet> bullets;
 	private Collection<Enemy> enemies;
 
+	private long lastFire = 0;
+
 	public Player(World world, KeyStatus keys) {
 		super(world);
 		xPosition = 100;
@@ -76,9 +78,10 @@ public class Player extends Entity{
 		if(typing.shouldMoveUp() == true) {
 			yPosition -= 10;
 		}
-		if(typing.shouldShoot() == true) {
+		if(typing.shouldShoot() == true && System.currentTimeMillis() - lastFire > 500) {
 			System.out.println("Shoot");
 			world.addBullets(new StandardPlayerBullet(world, xPosition + width + 1, yPosition + height/4));
+			lastFire = System.currentTimeMillis();
 		}
 	}
 }

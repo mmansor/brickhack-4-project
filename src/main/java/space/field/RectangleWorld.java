@@ -83,7 +83,7 @@ public class RectangleWorld implements World {
 	}
 
 	public void removeBullets(Bullet b) {
-	    bullets.add(b);
+	    bullets.remove(b);
     }
 
 	public void removeEnemies(Enemy e) {
