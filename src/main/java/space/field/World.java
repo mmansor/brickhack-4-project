@@ -23,4 +23,7 @@ public interface World extends Updateable {
 	
 	public abstract void addBullets(Bullet b);
 	public abstract void addEnemies(Enemy e);
+
+	public abstract void removeBullets(Bullet b);
+	public abstract void removeEnemies(Enemy e);
 }

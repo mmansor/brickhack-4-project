@@ -15,7 +15,6 @@ public class Player extends Entity{
 	private double height;
 	private Hitbox hitbox;
 	private KeyStatus typing;
-	private boolean isColliding;
 	private Collection<Bullet> bullets;
 	private Collection<Enemy> enemies;
 
@@ -27,7 +26,6 @@ public class Player extends Entity{
 		height = 25;
 		hitbox = new RectangleHitbox(xPosition, yPosition, width, height);
 		typing = keys;
-		isColliding = false;
 	}
 
 	public double getXPosition() {
@@ -81,9 +79,6 @@ public class Player extends Entity{
 		if(typing.shouldShoot() == true) {
 			System.out.println("Shoot");
 			world.addBullets(new StandardPlayerBullet(world, xPosition + width + 1, yPosition + height/4));
-		}
-		if(isColliding = true){
-
 		}
 	}
 }

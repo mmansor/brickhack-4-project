@@ -11,8 +11,4 @@ public abstract class Bullet extends Entity {
 		super(world);
 	}
 
-	public boolean getIsDanger(){
-		return isDanger;
-	}
-
 }

@@ -70,7 +70,14 @@ public class RectangleWorld implements World {
 	public void addEnemies(Enemy e) {
 		enemies.add(e);
 	}
-	
+
+	public void removeBullets(Bullet b) {
+	    bullets.add(b);
+    }
+
+	public void removeEnemies(Enemy e) {
+	    enemies.remove(e);
+    }
 
 	public void setPlayer(Player player) {
 		this.player = player;
