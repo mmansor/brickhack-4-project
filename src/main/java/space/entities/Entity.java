@@ -6,13 +6,32 @@ import space.gui.Sprite;
 public abstract class Entity implements Updateable {
 
 	protected World world;
+	
+	private double xPos;
+	private double yPos;
+	
+	private Hitbox hitbox = null;
 
 	public Entity(World world) {
 		this.world = world;
 	}
 	
-	public abstract double getXPosition();
-	public abstract double getYPosition();
+	public  double getXPosition() {
+		return xPos;
+	}
+	public  double getYPosition() {
+		return yPos;
+	}
+	
+	public void setPosition(double x, double y) {
+		xPos = x;
+		yPos = y;
+	}
+	
+	public void move(double x, double y) {
+		xPos += x;
+		yPos += y;
+	}
 	
 	
 	public abstract Hitbox getHitbox();

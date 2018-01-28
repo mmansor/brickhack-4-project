@@ -43,7 +43,7 @@ public class StandardPlayerBullet extends Bullet{
     }
 
     public Sprite getSprite() {
-
+        return null;
     }
 
     public void update() {

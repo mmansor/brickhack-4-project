@@ -12,6 +12,8 @@ public class ControlLoop implements Runnable {
 	private final int UPDATES_PER_SECOND = 60;
 	private final int UPDATE_PERIOD = 1000 / UPDATES_PER_SECOND;
 	
+	private boolean isClosing = false;
+	
 	public ControlLoop(World world, CanDrawWorld renderer) {
 		this.world = world;
 		this.renderer = renderer;
@@ -20,7 +22,7 @@ public class ControlLoop implements Runnable {
 	public void run() {
 		
 		long lastUpdateTime = System.currentTimeMillis();
-		while(!Thread.interrupted()) {
+		while(!isClosing) {
 			world.update();
 			renderer.drawWorld(world);
 			
@@ -35,6 +37,10 @@ public class ControlLoop implements Runnable {
 			
 			lastUpdateTime = System.currentTimeMillis();
 		}
+	}
+	
+	public void close() {
+		isClosing = true;
 	}
 	
 	
