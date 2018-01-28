@@ -3,6 +3,7 @@ package space.entities;
 
 import space.gui.Sprite;
 import space.field.World;
+import space.gui.sprites.SpriteRegistry;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -13,20 +14,8 @@ public class CircleEnemy extends Enemy {
     }
 
 
-
-    private Sprite sprite = new Sprite() {
-        BufferedImage image = new BufferedImage(50, 25, BufferedImage.TYPE_INT_ARGB);
-        public BufferedImage getImage() {
-            return image;
-        }
-    };
-
     public Sprite getSprite() {
-        Graphics graphics = sprite.getImage().getGraphics();
-        graphics.setColor(Color.WHITE);
-        graphics.fillRect(0,0,50,25);
-
-        return sprite;
+        return SpriteRegistry.getSpriteRegistry().getSprite("Paratroopa");
     }
 
 
@@ -42,7 +31,7 @@ public class CircleEnemy extends Enemy {
 
     }
     public double getHeight(){
-        return 25;
+        return 57;
     }
     public double getWidth(){
         return 50;

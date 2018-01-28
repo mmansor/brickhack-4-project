@@ -2,6 +2,7 @@ package space.entities;
 
 import space.field.World;
 import space.gui.Sprite;
+import space.gui.sprites.SpriteRegistry;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -17,27 +18,16 @@ public class StandardPlayerBullet extends Bullet{
     }
 
     public double getWidth() {
-        return 10;
+        return 15;
     }
 
     public double getHeight() {
-        return 5;
+        return 18;
     }
 
 
-    private Sprite sprite = new Sprite() {
-        BufferedImage image = new BufferedImage(20, 10, BufferedImage.TYPE_INT_ARGB);
-        public BufferedImage getImage() {
-            return image;
-        }
-    };
-
     public Sprite getSprite() {
-        Graphics graphics = sprite.getImage().getGraphics();
-        graphics.setColor(Color.RED);
-        graphics.fillRect(0, 0, 20, 10);
-
-        return sprite;
+        return SpriteRegistry.getSpriteRegistry().getSprite("Fireball");
     }
 
     public void update() {

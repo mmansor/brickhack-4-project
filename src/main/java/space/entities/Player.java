@@ -2,6 +2,7 @@ package space.entities;
 
 import space.field.World;
 import space.gui.Sprite;
+import space.gui.sprites.SpriteRegistry;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -25,7 +26,7 @@ public class Player extends Entity{
 		xPosition = 100;
 		yPosition = world.getHeight()/2;
 		width = 50;
-		height = 25;
+		height = 42;
 		hitbox = new RectangleHitbox(xPosition, yPosition, width, height);
 		typing = keys;
 	}
@@ -50,19 +51,9 @@ public class Player extends Entity{
 		return hitbox;
 	}
 
-	private Sprite sprite = new Sprite() {
-		BufferedImage image = new BufferedImage(50, 25, BufferedImage.TYPE_INT_ARGB);
-		public BufferedImage getImage() {
-			return image;
-		}
-	};
 
 	public Sprite getSprite() {
-		Graphics graphics = sprite.getImage().getGraphics();
-		graphics.setColor(Color.BLUE);
-		graphics.fillRect(0,0,50,25);
-
-		return sprite;
+        return SpriteRegistry.getSpriteRegistry().getSprite("Mario");
 	}
 
 	public void update() {

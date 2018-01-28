@@ -10,9 +10,9 @@ import java.awt.image.BufferedImage;
 public class StraightLineEnemy extends Enemy{
 
 
-    public StraightLineEnemy(World world) {
+    public StraightLineEnemy(World world, double x, double y) {
         super(world);
-        setPosition(world.getWidth(), world.getHeight()/2);
+        setPosition(x, y);
 
     }
 
@@ -21,12 +21,12 @@ public class StraightLineEnemy extends Enemy{
     }
 
     public double getHeight() {
-        return 25;
+        return 51;
     }
 
 
     public Sprite getSprite() {
-        return SpriteRegistry.getSpriteRegistry().getSprite("Enemy_1");
+        return SpriteRegistry.getSpriteRegistry().getSprite("Goomba");
     }
 
     public void update() {
