@@ -61,27 +61,33 @@ public class KeyStatusListener implements KeyStatus, KeyListener {
 	}
 
 	@Override
-	public boolean isWKeyDown() {
+	public boolean shouldMoveUp() {
 		// TODO Auto-generated method stub
 		return wPressed;
 	}
 
 	@Override
-	public boolean isAKeyDown() {
+	public boolean shouldMoveLeft() {
 		// TODO Auto-generated method stub
 		return aPressed;
 	}
 
 	@Override
-	public boolean isSKeyDown() {
+	public boolean shouldMoveDown() {
 		// TODO Auto-generated method stub
 		return sPressed;
 	}
 
 	@Override
-	public boolean isDKeyDown() {
+	public boolean shouldMoveRight() {
 		// TODO Auto-generated method stub
 		return dPressed;
+	}
+
+	@Override
+	public boolean shouldShoot() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

@@ -5,6 +5,7 @@ import space.gui.Sprite;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.Collection;
 
 public class Player extends Entity{
 
@@ -14,6 +15,9 @@ public class Player extends Entity{
 	private double height;
 	private Hitbox hitbox;
 	private KeyStatus typing;
+	private boolean isColliding;
+	private Collection<Bullet> bullets;
+	private Collection<Enemy> enemies;
 
 	public Player(World world, KeyStatus keys) {
 		super(world);
@@ -23,6 +27,7 @@ public class Player extends Entity{
 		height = 25;
 		hitbox = new RectangleHitbox(xPosition, yPosition, width, height);
 		typing = keys;
+		isColliding = false;
 	}
 
 	public double getXPosition() {
@@ -61,19 +66,23 @@ public class Player extends Entity{
 	}
 
 	public void update() {
-		if(typing.isAKeyDown() == true) {
-			xPosition -= 10;
+		if(typing.shouldMoveLeft() == true) {
+			xPosition -= 1;
 		}
-		if(typing.isDKeyDown() == true) {
-			
-			System.out.println("Moving Right");
-			xPosition += 10;
+		if(typing.shouldMoveRight() == true) {
+			xPosition += 1;
 		}
-		if(typing.isSKeyDown() == true) {
-			yPosition += 10;
+		if(typing.shouldMoveDown() == true) {
+			yPosition += 1;
 		}
-		if(typing.isWKeyDown() == true) {
-			yPosition -= 10;
+		if(typing.shouldMoveUp() == true) {
+			yPosition -= 1;
+		}
+		if(typing.shouldShoot() == true) {
+			world.addBullets(new StandardPlayerBullet(world, xPosition + width + 1, yPosition - height/2));
+		}
+		if(isColliding = true){
+
 		}
 	}
 }

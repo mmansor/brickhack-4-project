@@ -11,7 +11,7 @@ public abstract class Entity implements Updateable {
 	private double yPos;
 	
 	private Hitbox hitbox = null;
-	
+
 	public Entity(World world) {
 		this.world = world;
 	}
@@ -37,4 +37,5 @@ public abstract class Entity implements Updateable {
 	public abstract Hitbox getHitbox();
 	
 	public abstract Sprite getSprite();
+
 }

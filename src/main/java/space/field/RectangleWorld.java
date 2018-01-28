@@ -59,15 +59,24 @@ public class RectangleWorld implements World {
 		return enemies;
 	}
 
-	@Override
-	public void addEnemy(Enemy enemy) {
-		// TODO Auto-generated method stub
-		enemies.add(enemy);
+	public void addBullets(Bullet b) {
+		bullets.add(b);
+	}
+
+	public void addEnemies(Enemy e) {
+		enemies.add(e);
 	}
 	
 
 	public void setPlayer(Player player) {
 		this.player = player;
+	}
+
+
+	@Override
+	public void addEnemy(Enemy enemy) {
+		enemies.add(enemy);
+		
 	}
 
 }

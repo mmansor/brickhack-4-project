@@ -20,4 +20,7 @@ public interface World extends Updateable {
 	
 	public abstract void addEnemy(Enemy enemy);
 	public abstract void setPlayer(Player player);
+	
+	public abstract void addBullets(Bullet b);
+	public abstract void addEnemies(Enemy e);
 }
