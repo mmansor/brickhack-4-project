@@ -19,23 +19,18 @@ public class KeyStatusListener implements KeyStatus, KeyListener {
 		switch (e.getKeyCode()) {
 		case KeyEvent.VK_W:
 			wPressed = true;
-			System.out.println("W pressed");
 			break;
 		case KeyEvent.VK_A:
 			aPressed = true;
-			System.out.println("A pressed");
 			break;
 		case KeyEvent.VK_S:
 			sPressed = true;
-			System.out.println("S pressed");
 			break;
 		case KeyEvent.VK_D:
 			dPressed = true;
-			System.out.println("D pressed");
 			break;
 		case KeyEvent.VK_SPACE:
 			spacePressed = true;
-			System.out.println("Space pressed");
 			break;
 		}
 	}

@@ -8,8 +8,6 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class CircleEnemy extends Enemy {
-    double height= 25;
-    double width = 50;
     public CircleEnemy(World world){
         super(world);
     }
@@ -44,9 +42,9 @@ public class CircleEnemy extends Enemy {
 
     }
     public double getHeight(){
-        return height;
+        return 25;
     }
     public double getWidth(){
-        return width;
+        return 50;
     }
 }

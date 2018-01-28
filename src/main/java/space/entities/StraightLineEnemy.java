@@ -9,23 +9,19 @@ import java.awt.image.BufferedImage;
 
 public class StraightLineEnemy extends Enemy{
 
-    private double width;
-    private double height;
 
     public StraightLineEnemy(World world) {
         super(world);
         setPosition(world.getWidth(), world.getHeight()/2);
-        width = 50;
-        height = 25;
 
     }
 
     public double getWidth() {
-        return width;
+        return 50;
     }
 
     public double getHeight() {
-        return height;
+        return 25;
     }
 
 

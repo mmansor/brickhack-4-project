@@ -8,25 +8,20 @@ import java.awt.image.BufferedImage;
 
 public class StandardPlayerBullet extends Bullet{
 
-    private double width;
-    private double height;
-    private Hitbox hitbox;
     private boolean isPlayer;
 
     public StandardPlayerBullet(World world, double x, double y) {
         super(world);
         setPosition(x,y);
-        width = 10;
-        height = 5;
         isPlayer = true;
     }
 
     public double getWidth() {
-        return width;
+        return 10;
     }
 
     public double getHeight() {
-        return height;
+        return 5;
     }
 
 

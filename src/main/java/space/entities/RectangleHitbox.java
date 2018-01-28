@@ -44,8 +44,24 @@ public class RectangleHitbox implements Hitbox {
         yPosition = y;
     }
 
+    private Rectangle asRectangle(Hitbox hitbox) {
+    	return new Rectangle((int)hitbox.getXPosition(), (int)hitbox.getYPosition(), (int)hitbox.getWidth(), (int)hitbox.getHeight());
+    }
 
     public boolean isIntersecting(Hitbox hitbox) {
+    	boolean value = asRectangle(this).intersects(asRectangle(hitbox));
+    	
+    	System.out.println("x: " + getXPosition());
+    	System.out.println("y: " + getYPosition());
+    	System.out.println("Width: " + getWidth());
+    	System.out.println("Height: " + getHeight());
+    	
+    	if(value) {
+    		System.out.println("Is intersecting");
+    	}
+    	
+    	return value;
+    	/*
         double x2 = xPosition + leWidth;
         double y2 = yPosition + leHeight;
         double x3 = hitbox.getXPosition();
@@ -64,5 +80,6 @@ public class RectangleHitbox implements Hitbox {
         else {
             return false;
         }
+        */
     }
 }
