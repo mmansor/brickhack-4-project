@@ -1,5 +1,6 @@
 package space;
 
+import space.entities.CircleEnemy;
 import space.entities.StraightLineEnemy;
 import space.field.RectangleWorld;
 import space.field.World;
@@ -10,6 +11,7 @@ public class Main {
 		Window gameFrame = new Window();
 		World world = new RectangleWorld();
 		world.addEnemy(new StraightLineEnemy(world));
+		world.addEnemy(new CircleEnemy(world));
 		
 		ControlLoop loop = new ControlLoop(world, gameFrame);
 		loop.run();

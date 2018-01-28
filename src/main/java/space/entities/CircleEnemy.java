@@ -1,12 +1,17 @@
 package space.entities;
 
+
 import space.gui.Sprite;
+import space.field.World;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class EnemyAI extends Enemy {
-    Enemy enemy ;
+public class CircleEnemy extends Enemy {
+    public CircleEnemy(World world){
+        super(world);
+    }
+
     @Override
     public Hitbox getHitbox() {
         return null;
@@ -28,12 +33,16 @@ public class EnemyAI extends Enemy {
         return sprite;
     }
 
+
+    double speed = .05;
+    double angle = 1;
     @Override
     public void update() {
-        double angle = +- 1;
-        double xCoord = enemy.setPosition(enemy.getXPosition() + cos());
-        double yCoord = enemy.setPosition(enemy.getYPosition() + );
-        move(90,90);
+        angle += 1;
+        double xCoord = 400 + 100 * Math.sin(speed * angle);
+        double yCoord =  300 + 100 * Math.cos(speed * angle);
+
+        setPosition(xCoord,yCoord);
 
     }
 }
