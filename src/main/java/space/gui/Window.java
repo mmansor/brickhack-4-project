@@ -2,6 +2,8 @@ package space.gui;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Component;
+
 import space.field.World;
 
 import javax.swing.JFrame;
@@ -12,10 +14,10 @@ import javax.swing.JPanel;
 public class Window implements CanDrawWorld {
     private World world = null;
     private final JFrame frame;
-	private final JPanel panel;
-	
+	private final GUIPanel panel;
+
 	public Window() {
-		panel = new JPanel();
+		panel = new GUIPanel();
 		frame = new JFrame();
 		
 		panel.setPreferredSize(new Dimension(400, 600));
@@ -24,25 +26,19 @@ public class Window implements CanDrawWorld {
 		frame.pack();
 		frame.setVisible(true);
 
+		GUIPanel GUI = new GUIPanel();
+
+		GUI.drawWorld(world);
+
+		
+
+
 
 	}
 
-	public void paintComponent(Graphics g){
-	    super.paintComponent(g);
-
-	  //  g.drawImage(world.getPlayer().getSprite().getImage(), world.getPlayer().getXPosition(), world.getPlayer().getYPosition(), null);
-
-	    for(Enemy enemy: world.getEnemies()){
-	       g.drawImage(enemy.getSprite().getImage(), enemy.getXPosition(), enemy.getYPosition(), null);
-
-        }
-
-    }
-
     @Override
     public void drawWorld(World world) {
-    this.world = world;
-    repaint();
+        panel.drawWorld(world);
     }
 }
 
