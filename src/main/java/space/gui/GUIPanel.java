@@ -7,10 +7,11 @@ import java.awt.Graphics;
 
 import space.entities.Bullet;
 import space.entities.Enemy;
+import space.entities.Bullet;
 import space.field.World;
 
 public class GUIPanel extends JPanel {
-	private World world = null;
+    private World world = null;
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -39,4 +40,5 @@ public class GUIPanel extends JPanel {
 		this.world = world;
 		repaint();
 	}
+
 }
