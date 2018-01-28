@@ -18,7 +18,7 @@ public class Main {
 		Window gameFrame = new Window(ksl);
 		World world = new RectangleWorld();
 		world.addEnemy(new StraightLineEnemy(world));
-        world.addEnemy((new CircleEnemy(world)));
+        //world.addEnemy((new CircleEnemy(world)));
 		Player p = new Player(world, ksl);
 		world.setPlayer(p);
 

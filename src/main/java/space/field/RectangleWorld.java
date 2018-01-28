@@ -3,6 +3,7 @@ package space.field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import space.entities.Bullet;
 import space.entities.Enemy;
@@ -11,8 +12,8 @@ import space.entities.Player;
 public class RectangleWorld implements World {
 
 	private Player player = null;
-	private List<Bullet> bullets = new ArrayList();
-	private List<Enemy> enemies = new ArrayList();
+	private List<Bullet> bullets = new CopyOnWriteArrayList();
+	private List<Enemy> enemies = new CopyOnWriteArrayList();
 	
 	public RectangleWorld() {
 	}
@@ -30,6 +31,16 @@ public class RectangleWorld implements World {
 
 		for(Bullet b: bullets) {
 		    b.update();
+        }
+
+        for(Enemy e: enemies){
+		    for(Bullet b: bullets){
+		        if (e.getHitbox().isIntersecting(b.getHitbox())){
+		            removeEnemies(e);
+		            removeBullets(b);
+		            break;
+                }
+            }
         }
 	}
 

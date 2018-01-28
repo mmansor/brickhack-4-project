@@ -46,12 +46,19 @@ public class RectangleHitbox implements Hitbox {
 
 
     public boolean isIntersecting(Hitbox hitbox) {
-        double thisNewX = xPosition + getWidth();
-        double thisNewY = yPosition + getHeight();
-        double otherNewX = hitbox.getXPosition() + hitbox.getWidth();
-        double otherNewY = hitbox.getYPosition() + hitbox.getHeight();
+        double x2 = xPosition + leWidth;
+        double y2 = yPosition + leHeight;
+        double x3 = hitbox.getXPosition();
+        double y3 = hitbox.getYPosition();
+        double x4 = x3 + hitbox.getWidth();
+        double y4 = y3 + hitbox.getHeight();
 
-        if(hitbox.getXPosition() > thisNewX || otherNewY > yPosition || xPosition > otherNewX || thisNewY > hitbox.getYPosition()) {
+        System.out.println(getYPosition());
+        System.out.println(y2);
+        System.out.println(y3);
+        System.out.println(y4);
+
+        if(x3 > x2 || y3 > y2 || xPosition > x4 || yPosition > y4) {
             return true;
         }
         else {

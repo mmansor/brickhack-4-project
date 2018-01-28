@@ -62,5 +62,9 @@ public class StandardPlayerBullet extends Bullet{
 
     public void update() {
         xPosition += 2;
+        if (xPosition >= world.getWidth()){
+            world.removeBullets(this);
+        }
+
     }
 }
