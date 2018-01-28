@@ -22,15 +22,26 @@ public class RectangleHitbox implements Hitbox {
     }
 
     public double getYPosition() {
+
         return yPosition;
     }
 
     public double getWidth() {
+
         return leWidth;
     }
 
     public double getHeight() {
+
         return leHeight;
+    }
+
+    public void setXPosition(double x){
+        xPosition = x;
+    }
+
+    public void setYPosition(double y){
+        yPosition = y;
     }
 
 

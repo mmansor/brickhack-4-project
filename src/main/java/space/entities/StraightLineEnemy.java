@@ -8,28 +8,15 @@ import java.awt.image.BufferedImage;
 
 public class StraightLineEnemy extends Enemy{
 
-    private double xPosition;
-    private double yPosition;
     private double width;
     private double height;
-    private Hitbox hitbox;
 
     public StraightLineEnemy(World world) {
         super(world);
-        xPosition = world.getWidth();
-        yPosition = world.getHeight()/2;
+        setPosition(world.getWidth(), world.getHeight()/2);
         width = 50;
         height = 25;
-        hitbox = new RectangleHitbox(xPosition, yPosition, width, height);
 
-    }
-
-    public double getXPosition() {
-        return xPosition;
-    }
-
-    public double getYPosition() {
-        return yPosition;
     }
 
     public double getWidth() {
@@ -38,10 +25,6 @@ public class StraightLineEnemy extends Enemy{
 
     public double getHeight() {
         return height;
-    }
-
-    public Hitbox getHitbox() {
-        return hitbox;
     }
 
     private Sprite sprite = new Sprite() {
@@ -60,6 +43,7 @@ public class StraightLineEnemy extends Enemy{
     }
 
     public void update() {
-        xPosition -= 1;
+
+        move(-1,0);
     }
 }
