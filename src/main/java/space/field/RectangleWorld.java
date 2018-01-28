@@ -56,4 +56,12 @@ public class RectangleWorld implements World {
 		return enemies;
 	}
 
+	public void addBullets(Bullet b) {
+		bullets.add(b);
+	}
+
+	public void addEnemies(Enemy e) {
+		enemies.add(e);
+	}
+
 }

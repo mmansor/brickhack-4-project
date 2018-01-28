@@ -4,9 +4,15 @@ import space.field.World;
 
 public abstract class Bullet extends Entity {
 
+	private boolean isColliding;
+	private boolean isDanger;
+
 	public Bullet(World world) {
 		super(world);
-		// TODO Auto-generated constructor stub
+	}
+
+	public boolean getIsDanger(){
+		return isDanger;
 	}
 
 }

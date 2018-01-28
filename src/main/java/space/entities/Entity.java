@@ -6,7 +6,7 @@ import space.gui.Sprite;
 public abstract class Entity implements Updateable {
 
 	protected World world;
-	
+
 	public Entity(World world) {
 		this.world = world;
 	}
@@ -18,4 +18,5 @@ public abstract class Entity implements Updateable {
 	public abstract Hitbox getHitbox();
 	
 	public abstract Sprite getSprite();
+
 }
