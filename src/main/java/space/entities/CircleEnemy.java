@@ -8,14 +8,12 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class CircleEnemy extends Enemy {
+    double height= 25;
+    double width = 50;
     public CircleEnemy(World world){
         super(world);
     }
 
-    @Override
-    public Hitbox getHitbox() {
-        return null;
-    }
 
 
     private Sprite sprite = new Sprite() {
@@ -44,5 +42,11 @@ public class CircleEnemy extends Enemy {
 
         setPosition(xCoord,yCoord);
 
+    }
+    public double getHeight(){
+        return height;
+    }
+    public double getWidth(){
+        return width;
     }
 }

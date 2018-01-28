@@ -1,8 +1,9 @@
 package space.entities;
 
 public interface KeyStatus {
-    public abstract boolean isWKeyDown();
-    public abstract boolean isAKeyDown();
-    public abstract boolean isSKeyDown();
-    public abstract boolean isDKeyDown();
+    public abstract boolean shouldMoveUp();
+    public abstract boolean shouldMoveDown();
+    public abstract boolean shouldMoveLeft();
+    public abstract boolean shouldMoveRight();
+    public abstract boolean shouldShoot();
 }
