@@ -11,6 +11,7 @@ public class KeyStatusListener implements KeyStatus, KeyListener {
 	private boolean aPressed = false;
 	private boolean sPressed = false;
 	private boolean dPressed = false;
+	private boolean spacePressed = false;
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
@@ -32,6 +33,10 @@ public class KeyStatusListener implements KeyStatus, KeyListener {
 			dPressed = true;
 			System.out.println("D pressed");
 			break;
+		case KeyEvent.VK_SPACE:
+			spacePressed = true;
+			System.out.println("Space pressed");
+			break;
 		}
 	}
 
@@ -50,6 +55,9 @@ public class KeyStatusListener implements KeyStatus, KeyListener {
 			break;
 		case KeyEvent.VK_D:
 			dPressed = false;
+			break;
+		case KeyEvent.VK_SPACE:
+			spacePressed = false;
 			break;
 		}
 	}
@@ -87,7 +95,7 @@ public class KeyStatusListener implements KeyStatus, KeyListener {
 	@Override
 	public boolean shouldShoot() {
 		// TODO Auto-generated method stub
-		return false;
+		return spacePressed;
 	}
 
 }

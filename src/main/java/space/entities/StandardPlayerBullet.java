@@ -3,6 +3,9 @@ package space.entities;
 import space.field.World;
 import space.gui.Sprite;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
+
 public class StandardPlayerBullet extends Bullet{
 
     private double xPosition;
@@ -42,8 +45,19 @@ public class StandardPlayerBullet extends Bullet{
         return hitbox;
     }
 
+    private Sprite sprite = new Sprite() {
+        BufferedImage image = new BufferedImage(20, 10, BufferedImage.TYPE_INT_ARGB);
+        public BufferedImage getImage() {
+            return image;
+        }
+    };
+
     public Sprite getSprite() {
-        return null;
+        Graphics graphics = sprite.getImage().getGraphics();
+        graphics.setColor(Color.RED);
+        graphics.fillRect(0, 0, 20, 10);
+
+        return sprite;
     }
 
     public void update() {

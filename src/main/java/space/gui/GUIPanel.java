@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import java.awt.Color;
 import java.awt.Graphics;
 
+import space.entities.Bullet;
 import space.entities.Enemy;
 import space.field.World;
 
@@ -26,6 +27,9 @@ public class GUIPanel extends JPanel {
 			for (Enemy enemy : world.getEnemies()) {
 				g.drawImage(enemy.getSprite().getImage(), (int) enemy.getXPosition(), (int) enemy.getYPosition(), null);
 
+			}
+			for (Bullet bullet : world.getBullets()) {
+				g.drawImage(bullet.getSprite().getImage(), (int) bullet.getXPosition(), (int) bullet.getYPosition(), null);
 			}
 		}
 

@@ -79,7 +79,8 @@ public class Player extends Entity{
 			yPosition -= 10;
 		}
 		if(typing.shouldShoot() == true) {
-			world.addBullets(new StandardPlayerBullet(world, xPosition + width + 1, yPosition - height/2));
+			System.out.println("Shoot");
+			world.addBullets(new StandardPlayerBullet(world, xPosition + width + 1, yPosition + height/4));
 		}
 		if(isColliding = true){
 

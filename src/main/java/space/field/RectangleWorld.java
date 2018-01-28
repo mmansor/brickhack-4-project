@@ -27,6 +27,10 @@ public class RectangleWorld implements World {
 		for(Enemy e: enemies) {
 			e.update();
 		}
+
+		for(Bullet b: bullets) {
+		    b.update();
+        }
 	}
 
 	@Override
